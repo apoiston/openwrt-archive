@@ -1,4 +1,4 @@
-name: Clean Packages
+name: clean packages
 
 on:
   workflow_dispatch:
@@ -14,16 +14,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@main
+      - name: checkout
+        uses: actions/checkout@v4
 
-      - name: Clean Tags
+      - name: clean tags
         run: |
           git fetch --tags
           git tag --sort=creatordate \
           | xargs -I {} bash -c '[ $(git log -1 --format=%ct {} || echo 0) -lt $(date +%s --date="30 days ago") ] && git tag -d {} && git push origin --delete refs/tags/{} || true'
 
-      - name: Clean Releases
+      - name: clean releases
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -43,7 +43,7 @@ jobs:
               gh api -X DELETE "/repos/$GITHUB_REPOSITORY/git/refs/tags/{}" --silent
           '
           
-      - name: Delete workflow runs
+      - name: delete workflow runs
         uses: Mattraks/delete-workflow-runs@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
