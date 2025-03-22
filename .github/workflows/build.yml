@@ -3,23 +3,22 @@ name: build packages
 on:
   workflow_dispatch:
 
+env:
+  TZ: Asia/Shanghai 
+
 permissions:
   contents: write
   actions: write
-
+  
 jobs:
   build:
     name: build
     runs-on: ubuntu-latest
 
     steps:
-      - name: set timezone
-        run: |
-          sudo timedatectl set-timezone Asia/Shanghai
-          date
-
       - name: system info
         run: |
+          date
           lscpu | grep -E '^Architecture|^CPU\(s\):|^Model name'
           uname -sr
           lsb_release -a
