@@ -1,0 +1,53 @@
+name: clean packages
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * 0"
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  clean:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: clean tags
+        run: |
+          git fetch --tags
+          git tag --sort=creatordate \
+          | xargs -I {} bash -c '[ $(git log -1 --format=%ct {} || echo 0) -lt $(date +%s --date="30 days ago") ] && git tag -d {} && git push origin --delete refs/tags/{} || true'
+
+      - name: clean releases
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          threshold=$(date -d "30 days ago" +%s)
+
+          gh release list --limit 100 --json tagName,createdAt \
+          | jq -r --argjson threshold "$threshold" '
+              .[] | 
+              select(
+                (.createdAt | fromdateiso8601) < $threshold
+              ) | 
+              .tagName
+          ' \
+          | xargs -I {} sh -c '
+              echo "Deleting Release and Tag: {}"
+              gh release delete "{}" --yes && \
+              gh api -X DELETE "/repos/$GITHUB_REPOSITORY/git/refs/tags/{}" --silent
+          '
+          
+      - name: delete workflow runs
+        uses: Mattraks/delete-workflow-runs@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          retain_days: 0
+          keep_minimum_runs: 2
+          
