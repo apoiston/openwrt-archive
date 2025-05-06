@@ -1,0 +1,56 @@
+name: build caches
+
+on:
+  workflow_dispatch:
+
+env:
+  TZ: Asia/Shanghai 
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: set timezone
+        run: |
+          sudo timedatectl set-timezone Asia/Shanghai
+          date +"%Y-%m-%d %H:%M:%S"
+
+      - name: system info
+        run: |
+          date +"%Y-%m-%d %H:%M:%S"
+          lscpu | grep -E '^Architecture|^CPU\(s\):|^Model name'
+          uname -sr
+          lsb_release -a
+          free -h
+
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          ref: 'main'
+
+      - name: build
+        uses: apoiston/actions@caches
+        with:
+          config_buildinfo: config/config.buildinfo
+          repo_url: ${{ secrets.DEV_REPO }}
+          branch: ${{ secrets.DEV_BRANCH }}
+          private-key: ${{ secrets.PRIVATE_KEY }}
+          public-key: ${{ secrets.PUBLIC_KEY }}
+          prepare_packages: ${{ secrets.PREPARE_PACKAGES }}
+          prepare_configure: ${{ secrets.PREPARE_CONFIGURE }}
+          
+      - name: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: caches
+          path: |
+            ./openwrt/openwrt-caches.tar.zst
+            ./openwrt/sha256sum.txt
+            ./openwrt/config-x86.buildinfo            
+          
