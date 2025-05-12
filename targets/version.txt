@@ -1,0 +1,4 @@
+version: r29525-90e2d7ab69
+linux_kernel: 6.12.28
+vermagic: 75b4fe02abca493f4a9259d0165b87a1
+gcc_version: 14.2.0
