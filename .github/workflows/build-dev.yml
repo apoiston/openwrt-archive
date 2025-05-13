@@ -1,0 +1,82 @@
+name: build dev
+
+on:
+  workflow_dispatch:
+
+env:
+  TZ: Asia/Shanghai 
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+
+    steps:
+      - name: set timezone
+        run: |
+          sudo timedatectl set-timezone Asia/Shanghai
+          date +"%Y-%m-%d %H:%M:%S"
+        env:
+          TZ: Asia/Shanghai
+                    
+      - name: system info
+        run: |
+          date +"%Y-%m-%d %H:%M:%S"
+          lscpu | grep -E '^Architecture|^CPU\(s\):|^Model name'
+          uname -sr
+          lsb_release -a
+          free -h
+
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: build
+        uses: apoiston/actions@world
+        with:
+          config_buildinfo: config/config.buildinfo
+          private-key: ${{ secrets.PRIVATE_KEY }}
+          public-key: ${{ secrets.PUBLIC_KEY }}
+          repo_url: ${{ secrets.DEV_REPO }}
+          branch: ${{ secrets.DEV_BRANCH }}
+          prepare_compile: ${{ secrets.PREPARE_COMPILE }}
+          prepare_configure: ${{ secrets.PREPARE_CONFIGURE }}
+          prepare_world: ${{ secrets.PREPARE_WORLD }}
+          gh_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: packages
+          path: |
+            ./openwrt/apps/*
+            ./openwrt/apps.tar.gz
+            
+      - name: add tag
+        id: add_tag
+        run: |
+          git config user.name "github actions"
+          git config user.email "actions@github.com"
+          TAG="$(date '+%y.%m.%d')-RC"
+          if git ls-remote --tags origin "$TAG" | grep -q "$TAG"; then
+            git push origin --delete "$TAG" || true
+          fi
+          git tag -d "$TAG" 2>/dev/null || true
+          git tag "$TAG"
+          git push origin "$TAG"
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+
+      - name: release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            ./openwrt/apps/*
+          tag_name: ${{ steps.add_tag.outputs.tag }}
+          name: OpenWrt SNAPSHOT ${{ steps.add_tag.outputs.tag }}
+          body_path: ./openwrt/version.md
+          draft: false
+          prerelease: true
+          token: ${{ secrets.GITHUB_TOKEN }}         
+          
