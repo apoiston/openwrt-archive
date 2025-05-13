@@ -1,0 +1,106 @@
+name: build
+
+on:
+  workflow_dispatch:
+
+env:
+  TZ: Asia/Shanghai 
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+
+    steps:
+      - name: set timezone
+        run: |
+          sudo timedatectl set-timezone Asia/Shanghai
+          date +"%Y-%m-%d %H:%M:%S"
+        env:
+          TZ: Asia/Shanghai
+                    
+      - name: system info
+        run: |
+          date +"%Y-%m-%d %H:%M:%S"
+          lscpu | grep -E '^Architecture|^CPU\(s\):|^Model name'
+          uname -sr
+          lsb_release -a
+          free -h
+
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: build
+        uses: apoiston/actions@world
+        with:
+          config_buildinfo: config/config.buildinfo
+          private-key: ${{ secrets.PRIVATE_KEY }}
+          public-key: ${{ secrets.PUBLIC_KEY }}
+          prepare_compile: ${{ secrets.PREPARE_COMPILE }}
+          prepare_configure: ${{ secrets.PREPARE_CONFIGURE }}
+          prepare_world: ${{ secrets.PREPARE_WORLD }}
+          gh_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: packages
+          path: |
+            ./openwrt/apps/*
+            ./openwrt/apps.tar.gz
+            
+      - name: prepare
+        continue-on-error: true
+        run: |
+          date +"%Y-%m-%d %H:%M:%S"
+          git clone -b packages https://github.com/apoiston/index.git
+          sed -i "s/N\/A/$(date +"%Y-%m-%d %H:%M:%S")/g" index/index.html
+          rsync -a --quiet --include='*.html' --include='*.css' --include='*.js' --exclude='*' index/ public/
+          mv openwrt/SNAPSHOT public/
+          rsync -a --quiet --include='*.buildinfo' --include='*.txt' --exclude='*' openwrt/apps/ targets/
+
+      - name: deploy cf pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          command: pages deploy public --project-name=infinitypackages --branch=apps
+
+      - name: commit
+        continue-on-error: true
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add targets/
+          git commit -m "chore: update on $(date +"%y.%m.%d")"
+          git push origin main --force
+
+      - name: add tag
+        id: add_tag
+        run: |
+          git config user.name "github actions"
+          git config user.email "actions@github.com"
+          TAG="$(date '+%y.%m.%d')"
+          if git ls-remote --tags origin "$TAG" | grep -q "$TAG"; then
+            git push origin --delete "$TAG" || true
+          fi
+          git tag -d "$TAG" 2>/dev/null || true
+          git tag "$TAG"
+          git push origin "$TAG"
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+
+      - name: release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            ./openwrt/apps/*
+          tag_name: ${{ steps.add_tag.outputs.tag }}
+          name: OpenWrt SNAPSHOT ${{ steps.add_tag.outputs.tag }}
+          body_path: ./openwrt/version.md
+          draft: false
+          prerelease: false
+          token: ${{ secrets.GITHUB_TOKEN }}         
+          
