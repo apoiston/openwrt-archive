@@ -1,5 +1,5 @@
 apk-mbedtls - 3.0.0_pre20250208-r2
-base-files - 1~f23ad96
+base-files - 1~3d6e1a3
 bash - 5.2.32-r1
 block-mount - 2024.12.02~49d36ba2-r1
 bnx2-firmware - 20250509-r1
@@ -150,7 +150,7 @@ libelf1 - 0.192-r1
 libext2fs2 - 1.47.2-r1
 libf2fs6 - 1.16.0-r3
 libffi - 3.4.7-r1
-libgcc1 - 14.2.0-r4
+libgcc1 - 14.3.0-r4
 libgmp10 - 6.3.0-r1
 libiwinfo-data - 2025.02.06~9cec6b4d-r1
 libiwinfo20230701 - 2025.02.06~9cec6b4d-r1
@@ -184,7 +184,7 @@ librt - 1.2.5-r4
 libsmartcols1 - 2.41-r1
 libsqlite3-0 - 3.49.1-r2
 libss2 - 1.47.2-r1
-libstdcpp6 - 14.2.0-r4
+libstdcpp6 - 14.3.0-r4
 libtirpc - 1.3.4-r2
 libubox20241219 - 2024.12.19~3868f47c-r1
 libubus20250516 - 2025.05.16~88e63250-r1
@@ -225,7 +225,7 @@ nginx-mod-luci - 1.28.0-r1
 nginx-mod-ubus - 1.28.0-r1
 nginx-ssl - 1.28.0-r1
 nginx-ssl-util - 1.7-r1
-nikki - 2025.05.23~989f4ec0-r1
+nikki - 2025.05.24~34de62d2-r1
 odhcp6c - 2024.09.25~b6ae9ffa-r1
 odhcpd-ipv6only - 2024.05.08~a2988231-r1
 open-vm-tools - 12.5.0-r1
