@@ -72,8 +72,8 @@ jobs:
       - name: commit
         continue-on-error: true
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add targets/
           git commit -m "chore: update on $(date +"%y.%m.%d")"
           git push origin main --force
@@ -81,8 +81,8 @@ jobs:
       - name: add tag
         id: add_tag
         run: |
-          git config user.name "github actions"
-          git config user.email "actions@github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           TAG="$(date '+%y.%m.%d')"
           if git ls-remote --tags origin "$TAG" | grep -q "$TAG"; then
             git push origin --delete "$TAG" || true
