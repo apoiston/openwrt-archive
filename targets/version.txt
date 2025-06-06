@@ -1,3 +1,3 @@
-version_code: r0-54febbc
+version_code: r0-79f097f
 linux_kernel.version: 6.12.32
 linux_kernel.vermagic: 225cc64690efa337ebb5c9461f655527
