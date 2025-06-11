@@ -1,1 +1,1 @@
-ae0c7756d77222e5d62cc2262853296ca72d9c4f3135023c034400f2bdbbf62d *openwrt-x86-64-generic-squashfs-combined-efi.img.gz
+7d4e11469a7ee1f2ebd9aa184c58a72442462579987dfa1f4a769429b8fcd542 *openwrt-x86-64-generic-squashfs-combined-efi.img.gz
