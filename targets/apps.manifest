@@ -1,5 +1,5 @@
 apk-mbedtls - 3.0.0_pre20250606-r2
-base-files - 1~9b77754
+base-files - 1~91a50b2
 bash - 5.2.37-r1
 block-mount - 2024.12.02~49d36ba2-r1
 bnx2-firmware - 20250613-r1
@@ -24,7 +24,7 @@ ip-full - 6.14.0-r1
 jansson4 - 2.14-r3
 jshn - 2024.12.19~3868f47c-r1
 jsonfilter - 2025.04.18~8a86fb78-r1
-kernel - 6.12.34~225cc64690efa337ebb5c9461f655527-r1
+kernel - 6.12.34~72380ebe227ac42c32bdfe6cdcfd1d83-r1
 kmod-acpi-video - 6.12.34-r1
 kmod-amazon-ena - 6.12.34-r1
 kmod-amd-xgbe - 6.12.34-r1
@@ -204,7 +204,7 @@ luci-app-package-manager - 25.170.30418~affbd1b
 luci-base - 25.170.30418~affbd1b
 luci-i18n-base-zh-cn - 25.170.30418~affbd1b
 luci-i18n-firewall-zh-cn - 25.170.30418~affbd1b
-luci-i18n-nikki-zh-cn - 25.170.41290~229f2e8
+luci-i18n-nikki-zh-cn - 25.171.40773~a15ce01
 luci-i18n-package-manager-zh-cn - 25.170.30418~affbd1b
 luci-mod-admin-full - 25.170.30418~affbd1b
 luci-mod-network - 25.170.30418~affbd1b
@@ -225,7 +225,7 @@ nginx-mod-luci - 1.28.0-r1
 nginx-mod-ubus - 1.28.0-r1
 nginx-ssl - 1.28.0-r1
 nginx-ssl-util - 1.7-r1
-nikki - 2025.06.14~c60750d5-r1
+nikki - 2025.06.21~56c0b088-r1
 odhcp6c - 2025.02.06~8aa8b706-r1
 odhcpd-ipv6only - 2024.05.08~a2988231-r1
 open-vm-tools - 12.5.0-r1
@@ -234,9 +234,9 @@ openwrt-keyring - 2024.11.01~fbae29d7-r1
 partx-utils - 2.41-r1
 ppp - 2.5.2-r1
 ppp-mod-pppoe - 2.5.2-r1
-procd - 2025.05.31~59d22013-r1
-procd-seccomp - 2025.05.31~59d22013-r1
-procd-ujail - 2025.05.31~59d22013-r1
+procd - 2025.06.19~cde025d5-r1
+procd-seccomp - 2025.06.19~cde025d5-r1
+procd-ujail - 2025.06.19~cde025d5-r1
 r8169-firmware - 20250613-r1
 rpcbind - 1.2.6-r2
 rpcd - 2024.12.02~cc9a471c-r1
