@@ -1,8 +1,8 @@
 apk-mbedtls - 3.0.0_pre20250606-r2
-base-files - 1~978d24c
+base-files - 1~52e339b
 bash - 5.2.37-r1
 block-mount - 2024.12.02~49d36ba2-r1
-bnx2-firmware - 20250613-r1
+bnx2-firmware - 20250627-r1
 busybox - 1.37.0-r4
 ca-bundle - 20241223-r1
 cgi-io - 2022.08.10~901b0f04-r21
@@ -19,7 +19,7 @@ grub2 - 2.12-r1
 grub2-bios-setup - 2.12-r1
 grub2-efi - 2.12-r1
 htop - 3.4.1-r1
-i915-firmware-dmc - 20250613-r1
+i915-firmware-dmc - 20250627-r1
 ip-full - 6.14.0-r1
 jansson4 - 2.14-r3
 jshn - 2024.12.19~3868f47c-r1
@@ -204,7 +204,7 @@ luci-app-package-manager - 25.181.01202~75a612a
 luci-base - 25.181.01202~75a612a
 luci-i18n-base-zh-cn - 25.181.01202~75a612a
 luci-i18n-firewall-zh-cn - 25.181.01202~75a612a
-luci-i18n-nikki-zh-cn - 25.178.64339~72b9790
+luci-i18n-nikki-zh-cn - 25.181.26909~44f872f
 luci-i18n-package-manager-zh-cn - 25.181.01202~75a612a
 luci-mod-admin-full - 25.181.01202~75a612a
 luci-mod-network - 25.181.01202~75a612a
@@ -237,7 +237,7 @@ ppp-mod-pppoe - 2.5.2-r1
 procd - 2025.06.19~cde025d5-r1
 procd-seccomp - 2025.06.19~cde025d5-r1
 procd-ujail - 2025.06.19~cde025d5-r1
-r8169-firmware - 20250613-r1
+r8169-firmware - 20250627-r1
 rpcbind - 1.2.6-r2
 rpcd - 2025.06.22~9389775c-r1
 rpcd-mod-file - 2025.06.22~9389775c-r1
