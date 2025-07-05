@@ -1,5 +1,5 @@
 apk-mbedtls - 3.0.0_pre20250606-r2
-base-files - 1~6f9ff39
+base-files - 1~f827d23
 bash - 5.2.37-r1
 block-mount - 2024.12.02~49d36ba2-r1
 bnx2-firmware - 20250627-r1
@@ -204,7 +204,7 @@ luci-app-package-manager - 25.184.61053~5780be0
 luci-base - 25.184.61053~5780be0
 luci-i18n-base-zh-cn - 25.184.61053~5780be0
 luci-i18n-firewall-zh-cn - 25.184.61053~5780be0
-luci-i18n-nikki-zh-cn - 25.181.26909~44f872f
+luci-i18n-nikki-zh-cn - 25.186.39053~a163825
 luci-i18n-package-manager-zh-cn - 25.184.61053~5780be0
 luci-mod-admin-full - 25.184.61053~5780be0
 luci-mod-network - 25.184.61053~5780be0
