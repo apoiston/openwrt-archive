@@ -1,3 +1,2 @@
-version_code: r30323-41bab4c9b1
 linux_kernel.version: 6.12.37
 linux_kernel.vermagic: a252f201fea20ad75b27f6307de45294
