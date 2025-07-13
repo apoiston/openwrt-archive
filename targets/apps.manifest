@@ -1,5 +1,5 @@
 apk-mbedtls - 3.0.0_pre20250606-r2
-base-files - 1665~41bab4c9b1
+base-files - 1~a89eced
 bash - 5.2.37-r1
 block-mount - 2025.07.05~e8cd820c-r1
 bnx2-firmware - 20250708-r1
@@ -8,7 +8,7 @@ ca-bundle - 20241223-r1
 cgi-io - 2022.08.10~901b0f04-r21
 curl - 8.12.1-r2
 dnsmasq-full - 2.91-r2
-dropbear - 2024.86-r1
+dropbear - 2025.88-r1
 e2fsprogs - 1.47.2-r1
 firewall4 - 2025.03.17~b6e51575-r1
 fstools - 2025.07.05~e8cd820c-r1
