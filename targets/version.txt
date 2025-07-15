@@ -1,2 +1,2 @@
 linux_kernel.version: 6.12.37
-linux_kernel.vermagic: a252f201fea20ad75b27f6307de45294
+linux_kernel.vermagic: 4061d6e27c179271ffdf98d080a92ccf
