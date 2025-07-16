@@ -60,7 +60,7 @@ jobs:
           sed -i "s/N\/A/$(date +"%Y-%m-%d %H:%M:%S")/g" index/index.html
           rsync -a --quiet --include='*.html' --include='*.css' --include='*.js' --exclude='*' index/ public/
           mv openwrt/SNAPSHOT public/
-          rsync -a --quiet --include='*.buildinfo' --include='*.txt' --include='*.manifest' --exclude='*' openwrt/apps/ targets/
+          rsync -a --quiet --include='*.buildinfo' --exclude='*' openwrt/apps/ targets/
 
       - name: deploy cf pages
         uses: cloudflare/wrangler-action@v3
