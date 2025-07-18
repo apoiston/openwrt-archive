@@ -1,5 +1,5 @@
 apk-mbedtls - 3.0.0_pre20250606-r2
-base-files - 1666~f77b9d76e0
+base-files - 1~6cd92ed
 bash - 5.2.37-r1
 block-mount - 2025.07.05~e8cd820c-r1
 bnx2-firmware - 20250708-r1
@@ -190,7 +190,7 @@ libubox20241219 - 2024.12.19~3868f47c-r1
 libubus20250702 - 2025.07.02~5952b48e-r1
 libuci20250120 - 2025.01.20~16ff0bad-r1
 libuclient20201210 - 2024.10.22~88ae8f20-r1
-libucode20230711 - 2025.06.09~37ac8f11-r2
+libucode20230711 - 2025.07.18~3f64c808-r1
 libudebug - 2023.12.06~6d3f51f9
 libustream-mbedtls20201210 - 2024.07.28~99bd3d2b-r1
 libuuid1 - 2.41.1-r1
@@ -225,7 +225,7 @@ nginx-mod-luci - 1.29.0-r1
 nginx-mod-ubus - 1.29.0-r1
 nginx-ssl - 1.29.0-r1
 nginx-ssl-util - 1.7-r1
-nikki - 2025.07.17~8f18d3f-r1
+nikki - 2025.07.18~d84b182-r1
 odhcp6c - 2025.02.06~8aa8b706-r1
 odhcpd-ipv6only - 2024.05.08~a2988231-r1
 open-vm-tools - 12.5.0-r1
@@ -251,13 +251,13 @@ ubus - 2025.07.02~5952b48e-r1
 ubusd - 2025.07.02~5952b48e-r1
 uci - 2025.01.20~16ff0bad-r1
 uclient-fetch - 2024.10.22~88ae8f20-r1
-ucode - 2025.06.09~37ac8f11-r2
-ucode-mod-fs - 2025.06.09~37ac8f11-r2
+ucode - 2025.07.18~3f64c808-r1
+ucode-mod-fs - 2025.07.18~3f64c808-r1
 ucode-mod-html - 1
-ucode-mod-log - 2025.06.09~37ac8f11-r2
-ucode-mod-math - 2025.06.09~37ac8f11-r2
-ucode-mod-ubus - 2025.06.09~37ac8f11-r2
-ucode-mod-uci - 2025.06.09~37ac8f11-r2
+ucode-mod-log - 2025.07.18~3f64c808-r1
+ucode-mod-math - 2025.07.18~3f64c808-r1
+ucode-mod-ubus - 2025.07.18~3f64c808-r1
+ucode-mod-uci - 2025.07.18~3f64c808-r1
 urandom-seed - 3
 urngd - 2023.11.01~44365eb1-r1
 usign - 2020.05.23~f1f65026-r1
