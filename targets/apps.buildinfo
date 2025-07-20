@@ -1,5 +1,5 @@
 apk-mbedtls - 3.0.0_pre20250606-r2
-base-files - 1~da4342c
+base-files - 1~66c34c6
 bash - 5.2.37-r1
 block-mount - 2025.07.05~e8cd820c-r1
 bnx2-firmware - 20250708-r1
@@ -195,7 +195,7 @@ libudebug - 2023.12.06~6d3f51f9
 libustream-mbedtls20201210 - 2024.07.28~99bd3d2b-r1
 libuuid1 - 2.41.1-r1
 libwrap - 7.6-r4
-libxml2 - 2.13.6-r1
+libxml2 - 2.14.5-r1
 logd - 2024.04.26~85f10530-r1
 lsqlite3 - 0.9.5-r1
 luci-app-firewall - 25.200.62111~eb66bdc
@@ -204,7 +204,7 @@ luci-app-package-manager - 25.200.62111~eb66bdc
 luci-base - 25.200.62111~eb66bdc
 luci-i18n-base-zh-cn - 25.200.62111~eb66bdc
 luci-i18n-firewall-zh-cn - 25.200.62111~eb66bdc
-luci-i18n-nikki-zh-cn - 25.192.10544~619ce9c
+luci-i18n-nikki-zh-cn - 25.201.49214~4bc17d4
 luci-i18n-package-manager-zh-cn - 25.200.62111~eb66bdc
 luci-mod-admin-full - 25.200.62111~eb66bdc
 luci-mod-network - 25.200.62111~eb66bdc
@@ -225,7 +225,7 @@ nginx-mod-luci - 1.29.0-r1
 nginx-mod-ubus - 1.29.0-r1
 nginx-ssl - 1.29.0-r1
 nginx-ssl-util - 1.7-r1
-nikki - 2025.07.19~407c13b-r1
+nikki - 2025.07.20~79decdc-r1
 odhcp6c - 2025.02.06~8aa8b706-r1
 odhcpd-ipv6only - 2024.05.08~a2988231-r1
 open-vm-tools - 12.5.0-r1
