@@ -204,7 +204,7 @@ luci-app-package-manager - 25.214.26081~8d36739
 luci-base - 25.214.26081~8d36739
 luci-i18n-base-zh-cn - 25.214.26081~8d36739
 luci-i18n-firewall-zh-cn - 25.214.26081~8d36739
-luci-i18n-nikki-zh-cn - 25.208.59490~dabd731
+luci-i18n-nikki-zh-cn - 25.215.24425~72f7333
 luci-i18n-package-manager-zh-cn - 25.214.26081~8d36739
 luci-mod-admin-full - 25.214.26081~8d36739
 luci-mod-network - 25.214.26081~8d36739
