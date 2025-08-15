@@ -1,5 +1,5 @@
 apk-mbedtls - 3.0.0_pre20250606-r2
-base-files - 1667~a15d07f74b
+base-files - 1667~830cd4f64b
 bash - 5.2.37-r1
 block-mount - 2025.07.05~e8cd820c-r1
 bnx2-firmware - 20250808-r1
@@ -188,7 +188,7 @@ libstdcpp6 - 15.2.0-r5
 libtirpc - 1.3.6-r1
 libubox20250723 - 2025.07.23~49056d17-r1
 libubus20250702 - 2025.07.02~5952b48e-r1
-libuci20250120 - 2025.01.20~16ff0bad-r1
+libuci20250120 - 2025.08.14~9033e8c2-r1
 libuclient20201210 - 2024.10.22~88ae8f20-r1
 libucode20230711 - 2025.07.18~3f64c808-r1
 libudebug - 2025.07.23~6ed85361
@@ -216,7 +216,7 @@ luci-proto-ppp - 25.225.37707~e484f9c
 luci-theme-bootstrap - 25.225.37707~e484f9c
 mkf2fs - 1.16.0-r4
 mtd - 26
-netifd - 2025.08.12~a0be9343-r1
+netifd - 2025.08.14~8c139e18-r1
 nfs-kernel-server - 2.8.3-r2
 nfs-utils - 2.8.3-r2
 nfs-utils-libs - 2.8.3-r2
@@ -225,7 +225,7 @@ nginx-mod-luci - 1.29.1-r1
 nginx-mod-ubus - 1.29.1-r1
 nginx-ssl - 1.29.1-r1
 nginx-ssl-util - 1.7-r1
-nikki - 2025.08.14~089766b-r1
+nikki - 2025.08.14~76e40ba-r1
 odhcp6c - 2025.02.06~8aa8b706-r1
 odhcpd-ipv6only - 2024.05.08~a2988231-r1
 open-vm-tools - 12.5.0-r1
@@ -249,7 +249,7 @@ terminfo - 6.4-r3
 ubox - 2024.04.26~85f10530-r1
 ubus - 2025.07.02~5952b48e-r1
 ubusd - 2025.07.02~5952b48e-r1
-uci - 2025.01.20~16ff0bad-r1
+uci - 2025.08.14~9033e8c2-r1
 uclient-fetch - 2024.10.22~88ae8f20-r1
 ucode - 2025.07.18~3f64c808-r1
 ucode-mod-fs - 2025.07.18~3f64c808-r1
