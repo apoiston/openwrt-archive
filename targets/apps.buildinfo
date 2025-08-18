@@ -1,5 +1,5 @@
 apk-mbedtls - 3.0.0_pre20250606-r2
-base-files - 1667~9736d42141
+base-files - 1667~d72157f4e3
 bash - 5.2.37-r1
 block-mount - 2025.07.05~e8cd820c-r1
 bnx2-firmware - 20250808-r1
@@ -191,7 +191,7 @@ libubus20250702 - 2025.07.02~5952b48e-r1
 libuci20250120 - 2025.08.14~9033e8c2-r1
 libuclient20201210 - 2024.10.22~88ae8f20-r1
 libucode20230711 - 2025.07.18~3f64c808-r1
-libudebug - 2025.08.15~93f6df02
+libudebug - 2025.08.17~892647b8
 libustream-mbedtls20201210 - 2024.07.28~99bd3d2b-r1
 libuuid1 - 2.41.1-r2
 libwrap - 7.6-r4
@@ -225,7 +225,7 @@ nginx-mod-luci - 1.29.1-r1
 nginx-mod-ubus - 1.29.1-r1
 nginx-ssl - 1.29.1-r1
 nginx-ssl-util - 1.7-r1
-nikki - 2025.08.16~48c1b1c-r1
+nikki - 2025.08.17~b481eca-r1
 odhcp6c - 2025.02.06~8aa8b706-r1
 odhcpd-ipv6only - 2024.05.08~a2988231-r1
 open-vm-tools - 12.5.0-r1
