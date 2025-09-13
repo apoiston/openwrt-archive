@@ -225,7 +225,7 @@ nginx-mod-luci - 1.29.1-r1
 nginx-mod-ubus - 1.29.1-r1
 nginx-ssl - 1.29.1-r1
 nginx-ssl-util - 1.7-r2
-nikki - 2025.09.13~4f4f13d-r1
+nikki - 2025.09.13~571be85-r1
 odhcp6c - 2025.02.06~8aa8b706-r1
 odhcpd-ipv6only - 2024.05.08~a2988231-r1
 open-vm-tools - 12.5.0-r1
