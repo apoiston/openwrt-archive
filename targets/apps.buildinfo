@@ -1,5 +1,5 @@
 apk-mbedtls - 3.0.0_pre20250606-r2
-base-files - 1667~b2f814fed4
+base-files - 1667~47155fe5ed
 bash - 5.2.37-r1
 block-mount - 2025.07.05~e8cd820c-r1
 bnx2-firmware - 20250808-r1
@@ -167,7 +167,7 @@ libncurses6 - 6.4-r3
 libnetfilter-conntrack3 - 1.1.0-r1
 libnettle8 - 3.10.1-r1
 libnfnetlink0 - 1.0.2-r1
-libnftnl11 - 1.2.9-r1
+libnftnl11 - 1.3.0-r1
 libnghttp2-14 - 1.66.0-r1
 libnl-cli200 - 3.11.0-r1
 libnl-core200 - 3.11.0-r1
@@ -220,7 +220,7 @@ netifd - 2025.09.12~2a85440b-r1
 nfs-kernel-server - 2.8.4-r1
 nfs-utils - 2.8.4-r1
 nfs-utils-libs - 2.8.4-r1
-nftables-json - 1.1.3-r1
+nftables-json - 1.1.5-r1
 nginx-mod-luci - 1.29.1-r1
 nginx-mod-ubus - 1.29.1-r1
 nginx-ssl - 1.29.1-r1
