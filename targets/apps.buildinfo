@@ -1,5 +1,5 @@
 apk-mbedtls - 3.0.0_pre20250606-r2
-base-files - 1667~878f31c210
+base-files - 1667~9b7d0c0d16
 bash - 5.2.37-r1
 block-mount - 2025.07.05~e8cd820c-r1
 bnx2-firmware - 20250917-r1
@@ -226,7 +226,7 @@ nginx-ssl - 1.29.1-r1
 nginx-ssl-util - 1.7-r2
 nikki - 2025.09.26~f45c6f5-r1
 odhcp6c - 2025.02.06~8aa8b706-r1
-odhcpd-ipv6only - 2025.09.16~c9816de1-r1
+odhcpd-ipv6only - 2025.09.27~bc9f9d93-r1
 open-vm-tools - 12.5.0-r1
 openssh-sftp-server - 10.0_p1-r3
 openwrt-keyring - 2024.11.01~fbae29d7-r1
