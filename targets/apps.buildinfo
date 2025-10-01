@@ -1,5 +1,5 @@
 apk-mbedtls - 3.0.0_pre20250606-r2
-base-files - 1667~263721dd0a
+base-files - 1667~8f4f7cce76
 bash - 5.2.37-r1
 block-mount - 2025.07.05~e8cd820c-r1
 bnx2-firmware - 20250917-r1
@@ -216,7 +216,7 @@ luci-proto-ppp - 25.273.63889~bad9c56
 luci-theme-bootstrap - 25.273.63889~bad9c56
 mkf2fs - 1.16.0-r4
 mtd - 26
-netifd - 2025.09.12~2a85440b-r1
+netifd - 2025.09.30~ecca21ca-r1
 nfs-kernel-server - 2.8.4-r2
 nfs-utils - 2.8.4-r2
 nftables-json - 1.1.5-r1
