@@ -3,7 +3,7 @@ name: build
 on:
   workflow_dispatch:
   schedule:
-    - cron: "30 21 * * *"
+    - cron: "00 21 * * *"
     
 env:
   TZ: Asia/Shanghai 
