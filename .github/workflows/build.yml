@@ -40,7 +40,7 @@ jobs:
           remove_dotnet: true
           remove_haskell: true
           remove_tool_cache: false
-          remove_swap: true
+          remove_swap: false
           remove_packages: "azure-cli google-cloud-cli microsoft-edge-stable google-chrome-stable firefox postgresql* temurin-* *llvm* mysql* dotnet-sdk-*"
           remove_packages_one_command: true
           remove_folders: "/usr/share/swift /usr/share/miniconda /usr/share/az* /usr/local/share/chromium /usr/local/share/powershell /usr/local/aws-cli /usr/local/aws-sam-cli /usr/share/gradle"      
@@ -60,14 +60,6 @@ jobs:
           prepare_world: ${{ secrets.PREPARE_WORLD }}
           gh_token: ${{ secrets.GITHUB_TOKEN }}
 
-      # - name: upload
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: packages
-      #     path: |
-      #       ./openwrt/apps/*
-      #       ./openwrt/apps.tar.gz
-            
       - name: prepare
         continue-on-error: true
         run: |
@@ -78,7 +70,7 @@ jobs:
           mv openwrt/SNAPSHOT public/
           rsync -a --quiet --include='*.buildinfo' --exclude='*' openwrt/apps/ targets/
 
-      - name: deploy cf pages
+      - name: deploy pages
         uses: cloudflare/wrangler-action@v3
         with:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
