@@ -1,5 +1,5 @@
 apk-mbedtls - 3.0.0_pre20251007-r1
-base-files - 1670~130306fab9
+base-files - 1670~e373a32a7c
 bash - 5.2.37-r1
 block-mount - 2025.10.03~12858e28-r1
 bnx2-firmware - 20251021-r1
@@ -204,7 +204,7 @@ luci-app-package-manager - 25.303.64394~1da88cc
 luci-base - 25.303.64394~1da88cc
 luci-i18n-base-zh-cn - 25.303.64394~1da88cc
 luci-i18n-firewall-zh-cn - 25.303.64394~1da88cc
-luci-i18n-nikki-zh-cn - 25.290.53865~fa4fcff
+luci-i18n-nikki-zh-cn - 25.304.34598~31a54fd
 luci-i18n-package-manager-zh-cn - 25.303.64394~1da88cc
 luci-mod-admin-full - 25.303.64394~1da88cc
 luci-mod-network - 25.303.64394~1da88cc
@@ -224,7 +224,7 @@ nginx-mod-luci - 1.29.3-r1
 nginx-mod-ubus - 1.29.3-r1
 nginx-ssl - 1.29.3-r1
 nginx-ssl-util - 1.7-r2
-nikki - 2025.10.28~6bffbdd-r1
+nikki - 2025.10.31~99e68e9-r1
 odhcp6c - 2025.10.21~77e1ae21-r1
 odhcpd-ipv6only - 2025.10.26~fc27940f-r1
 open-vm-tools - 13.0.0-r1
