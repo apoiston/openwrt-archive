@@ -1,5 +1,5 @@
 apk-mbedtls - 3.0.0_pre20251007-r1
-base-files - 1670~3570dee5f0
+base-files - 1670~32c46b569f
 bash - 5.2.37-r1
 block-mount - 2025.10.03~12858e28-r1
 bnx2-firmware - 20251021-r1
@@ -224,7 +224,7 @@ nginx-mod-luci - 1.29.3-r1
 nginx-mod-ubus - 1.29.3-r1
 nginx-ssl - 1.29.3-r1
 nginx-ssl-util - 1.7-r2
-nikki - 2025.11.02~6fb1f79-r1
+nikki - 2025.11.03~fd39c2a-r1
 odhcp6c - 2025.10.21~77e1ae21-r1
 odhcpd-ipv6only - 2025.10.26~fc27940f-r1
 open-vm-tools - 13.0.0-r1
