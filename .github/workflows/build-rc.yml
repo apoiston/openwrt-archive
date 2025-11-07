@@ -66,7 +66,7 @@ jobs:
           sed -i "s/N\/A/$(date +"%Y-%m-%d %H:%M:%S")/g" index/index.html
           rsync -a --quiet --include='*.html' --include='*.css' --include='*.js' --exclude='*' index/ public/
           mv openwrt/SNAPSHOT public/
-          rsync -a --quiet --include='*.buildinfo' --exclude='*' openwrt/apps/ targets/
+          rsync -a --quiet --include='*.buildinfo' --exclude='*' openwrt/builder/ targets/
 
       - name: deploy pages
         uses: cloudflare/wrangler-action@v3
@@ -102,8 +102,8 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            ./openwrt/apps/*.gz
-            ./openwrt/apps/*.txt
+            ./openwrt/builder/*.gz
+            ./openwrt/builder/*.txt
           tag_name: ${{ steps.add_tag.outputs.tag }}
           name: OpenWrt SNAPSHOT ${{ steps.add_tag.outputs.tag }}
           body_path: ./openwrt/version.md
