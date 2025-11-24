@@ -1,6 +1,6 @@
 apk-mbedtls - 3.0.0_pre20251110-r2
 attendedsysupgrade-common - 9
-base-files - 1673~adad973a9c
+base-files - 1673~4dab2a9405
 bash - 5.2.37-r1
 block-mount - 2025.10.03~12858e28-r1
 bnx2-firmware - 20251111-r1
@@ -227,7 +227,7 @@ nginx-mod-luci - 1.29.3-r1
 nginx-mod-ubus - 1.29.3-r1
 nginx-ssl - 1.29.3-r1
 nginx-ssl-util - 1.7-r2
-nikki - 2025.11.23~7571c87-r1
+nikki - 2025.11.25~66781a5-r1
 odhcp6c - 2025.11.14~cbc8ff0e-r1
 odhcpd-ipv6only - 2025.11.14~d3dc577d-r1
 open-vm-tools - 13.0.0-r1
