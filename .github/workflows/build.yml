@@ -103,9 +103,7 @@ jobs:
       - name: release
         uses: softprops/action-gh-release@v2
         with:
-          files: |
-            ./openwrt/builder/*.gz
-            ./openwrt/builder/*.txt
+          files: ./openwrt/builder/*.{gz,zst,txt}
           tag_name: ${{ steps.add_tag.outputs.tag }}
           name: OpenWrt SNAPSHOT ${{ steps.add_tag.outputs.tag }}
           body_path: ./openwrt/version.md

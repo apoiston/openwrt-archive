@@ -63,5 +63,5 @@ jobs:
         with:
           name: packages
           path: |
-            ./openwrt/builder/*
+            ./openwrt/builder/*.{gz,buildinfo,txt}
             ./openwrt/apps.tar.gz
