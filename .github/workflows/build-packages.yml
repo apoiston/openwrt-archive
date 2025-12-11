@@ -56,7 +56,7 @@ jobs:
           git clone --depth=1 --quiet --branch packages https://github.com/apoiston/index.git
           sed -i "s/N\/A/$(date +"%Y-%m-%d %H:%M:%S %Z")/g" index/index.html
           rsync -a --quiet --include="*.html" --include="*.css" --include="*.js" --exclude="*" index/ public/
-          rsync -a --quiet openwrt/snapshot public/
+          rsync -a --quiet openwrt/snapshots public/
           printf '%s\n' "${{ secrets.PUBLIC_KEY }}" > public/public-key.pem
 
       - name: deploy pages
