@@ -36,8 +36,8 @@ jobs:
         uses: apoiston/actions@toolchain
         with:
           config_buildinfo: builder/config.buildinfo
-          private-key: ${{ secrets.PRIVATE_KEY }}
-          public-key: ${{ secrets.PUBLIC_KEY }}
+          private_key: ${{ secrets.PRIVATE_KEY }}
+          public_key: ${{ secrets.PUBLIC_KEY }}
           prepare_compile: ${{ secrets.PREPARE_COMPILE }}
           prepare_configure: ${{ secrets.PREPARE_CONFIGURE }}
           prepare_toolchain: ${{ secrets.PREPARE_TOOLCHAIN }}

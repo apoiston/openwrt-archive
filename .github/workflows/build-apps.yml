@@ -37,10 +37,10 @@ jobs:
       - name: build
         uses: apoiston/actions@apps
         with:
-          private-key: ${{ secrets.PRIVATE_KEY }}
-          public-key: ${{ secrets.PUBLIC_KEY }}
-          prepare_setup_sdk: ${{ secrets.PREPARE_SETUP_SDK }}          
-          prepare_packages_configure: ${{ secrets.PREPARE_PACKAGES_CONFIGURE }}          
+          config_buildinfo: builder/config.buildinfo
+          private_key: ${{ secrets.PRIVATE_KEY }}
+          public_key: ${{ secrets.PUBLIC_KEY }}
+          prepare_sdk: ${{ secrets.PREPARE_SDK }}          
           prepare_apps: ${{ secrets.PREPARE_APPS }}
           gh_token: ${{ secrets.GITHUB_TOKEN }}
 
