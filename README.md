@@ -11,11 +11,11 @@ The new repository has been activated.
 
 ### Package Repositories
 
-- [infinityapps](https://infinityapps.pages.dev/)
+- [apps](https://infinityapps.pages.dev/)
 
-- [infinitykmods](https://infinitykmods.pages.dev/)
+- [kmods](https://infinitykmods.pages.dev/)
 
-- [infinitypackages](https://infinitypackages.pages.dev/)
+- [packages](https://infinitypackages.pages.dev/)
 
 ### Special Thanks
 
