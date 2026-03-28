@@ -15,11 +15,11 @@ jobs:
       - name: Set timezone
         run: |
           sudo timedatectl set-timezone Asia/Shanghai
-          date +"%Y-%m-%d %H:%M:%S %Z"
+          date +"%Y-%m-%d %H:%M:%S %z %Z"
                     
       - name: Display system info
         run: |
-          date +"%Y-%m-%d %H:%M:%S %Z"
+          date +"%Y-%m-%d %H:%M:%S %z %Z"
           lscpu | grep -E '^Architecture|^CPU\(s\):|^Model name'
           uname -sr
           lsb_release -a
@@ -58,7 +58,7 @@ jobs:
         continue-on-error: true
         run: |
           git add bin/
-          git commit -m "build: $(date +"%Y-%m-%d %H:%M:%S %Z") [SDK]"
+          git commit -m "build: $(date +"%Y-%m-%d %H:%M:%S %z %Z") [SDK]"
           git push origin main --force
 
       - name: Create tag
