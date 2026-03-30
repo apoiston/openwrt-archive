@@ -1,0 +1,59 @@
+name: Apps
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 5 * * *"
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: write
+
+    steps:
+      - name: Set timezone
+        run: |
+          sudo timedatectl set-timezone Asia/Shanghai
+          date +"%Y-%m-%d %H:%M:%S %z %Z"
+
+      - name: Display system info
+        run: |
+          date +"%Y-%m-%d %H:%M:%S %z %Z"
+          lscpu | grep -E '^Architecture|^CPU\(s\):|^Model name'
+          uname -sr
+          lsb_release -a
+          free -h
+          df -Th
+
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Build
+        uses: apoiston/actions@packages
+        with:
+          private_key: ${{ secrets.PRIVATE_KEY }}
+          public_key: ${{ secrets.PUBLIC_KEY }}
+          setup_sdk: ${{ secrets.SETUP_SDK }}
+          build_apps: ${{ secrets.BUILD_APPS }}
+          config_buildinfo: builder/config.buildinfo
+          enable_build_apps: true
+
+      - name: Prepare
+        continue-on-error: true
+        run: |
+          date +"%Y-%m-%d %H:%M:%S %z %Z"
+          git clone --depth=1 --quiet --branch packages https://github.com/apoiston/index.git
+          sed -i "s/N\/A/$(date +"%Y-%m-%d %H:%M:%S %z %Z")/g" index/index.html
+          rsync -a --quiet --include="*.html" --include="*.css" --include="*.js" --exclude="*" index/ apps/
+          rsync -a --quiet openwrt/builder-apps/snapshots apps/
+          printf '%s' "${{ secrets.PUBLIC_KEY }}" > apps/public-key.pem
+
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          command: pages deploy apps --project-name=infinityapps --branch=apps

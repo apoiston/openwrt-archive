@@ -1,0 +1,96 @@
+name: Packages
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: write
+
+    steps:
+      - name: Set timezone
+        run: |
+          sudo timedatectl set-timezone Asia/Shanghai
+          date +"%Y-%m-%d %H:%M:%S %z %Z"
+                    
+      - name: Display system info
+        run: |
+          lscpu | grep -E '^Architecture|^CPU\(s\):|^Model name'
+          uname -sr
+          lsb_release -a
+          free -h
+          df -Th
+
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Build
+        uses: apoiston/actions@packages
+        with:
+          private_key: ${{ secrets.PRIVATE_KEY }}
+          public_key: ${{ secrets.PUBLIC_KEY }}
+          setup_sdk: ${{ secrets.SETUP_SDK }}
+          build_packages: ${{ secrets.BUILD_PACKAGES }}
+          config_buildinfo: builder/config.buildinfo
+          enable_build_packages: true
+
+      - name: Upload
+        uses: actions/upload-artifact@v7
+        with:
+          name: packages
+          path: |
+            openwrt/builder-apps/
+            openwrt/builder-kmods/
+            openwrt/builder-packages/
+
+  deploy:
+    needs: build
+    name: Deploy ${{ matrix.branch }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        include:
+          - directory: builder-apps
+            project_name: infinityapps
+            branch: apps
+          - directory: builder-kmods
+            project_name: infinitykmods
+            branch: kmods
+          - directory: builder-packages
+            project_name: infinitypackages
+            branch: packages
+
+    steps:
+      - name: Set timezone
+        run: |
+          sudo timedatectl set-timezone Asia/Shanghai
+          date +"%Y-%m-%d %H:%M:%S %z %Z"
+
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Download
+        uses: actions/download-artifact@v8
+        with:
+          name: packages
+
+      - name: Prepare
+        continue-on-error: true
+        run: |
+          date +"%Y-%m-%d %H:%M:%S %z %Z"
+          git clone --depth=1 --quiet --branch packages https://github.com/apoiston/index.git
+          sed -i "s/N\/A/$(date +"%Y-%m-%d %H:%M:%S %z %Z")/g" index/index.html
+          rsync -a --quiet --include='*.html' --include='*.css' --include='*.js' --exclude='*' index/ ${{ matrix.directory }}/
+          printf '%s' "${{ secrets.PUBLIC_KEY }}" > ${{ matrix.directory }}/public-key.pem
+
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          command: pages deploy ${{ matrix.directory }} --project-name=${{ matrix.project_name }} --branch=${{ matrix.branch }}
