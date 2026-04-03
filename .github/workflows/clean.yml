@@ -1,0 +1,25 @@
+name: Clean
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 10 * * 0"
+
+jobs:
+  clean:
+    name: Clean releases
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Clean releases
+        uses: apoiston/actions@clean
+        with:
+          enable_clean_releases: true
