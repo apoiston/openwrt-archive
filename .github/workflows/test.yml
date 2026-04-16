@@ -93,4 +93,5 @@ jobs:
         with:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          wranglerVersion: "4"
           command: pages deploy ${{ matrix.directory }} --project-name=${{ matrix.project_name }} --branch=${{ matrix.branch }}
