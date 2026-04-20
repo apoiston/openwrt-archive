@@ -1,7 +1,9 @@
-name: Test
+name: Build
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "0 5 * * 1"
 
 jobs:
   build:
