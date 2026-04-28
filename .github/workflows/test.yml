@@ -1,4 +1,4 @@
-name: Update
+name: Build extra packages
 
 on:
   workflow_dispatch:
