@@ -1,0 +1,9 @@
+--- a/conf/mime.types
++++ b/conf/mime.types
+@@ -11,7 +11,7 @@ types {
+     text/mathml                                      mml;
+-    text/plain                                       txt;
++    text/plain                                       txt log yaml yml conf sh buildinfo toml ini;
+     text/vnd.sun.j2me.app-descriptor                 jad;
+     text/vnd.wap.wml                                 wml;
+     text/x-component                                 htc;
