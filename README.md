@@ -1,13 +1,13 @@
 # OpenWrt Archive
 
 The new repository has been activated.
-- [openwrt-builder](https://github.com/apoiston/openwrt-builder)
+- [builder](https://github.com/apoiston/builder)
 
 ---
 
 ### Firmware Download
 
-- [Releases](https://github.com/apoiston/openwrt-builder/releases)
+- [Releases](https://github.com/apoiston/builder/releases)
 
 ### Credits
 
