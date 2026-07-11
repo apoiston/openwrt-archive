@@ -10,7 +10,8 @@ user root;
 include module.d/*.module;
 
 events {
-    worker_connections 1024;
+	worker_connections 5120;
+	accept_mutex on;
 }
 
 http {
@@ -21,10 +22,14 @@ http {
 
 	include mime.types;
 	default_type application/octet-stream;
+	keepalive_timeout 65;
+	keepalive_requests 500;
 	sendfile on;
+	tcp_nopush on;
+	tcp_nodelay on;
 
 	client_max_body_size 4096M;
-    client_body_buffer_size 128K;
+	client_body_buffer_size 128K;
 	large_client_header_buffers 4 16k;
 
 	gzip on;
@@ -35,4 +40,8 @@ http {
 
 	#UCI_HTTP_CONFIG
 	include conf.d/*.conf;
+}
+
+stream {
+    include stream.d/*.conf;
 }
